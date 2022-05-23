@@ -23,7 +23,8 @@ public class AuthenticationFilter implements Filter {
     }
 
     @Override
-    public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain)
+    public void doFilter(ServletRequest servletRequest,
+                         ServletResponse servletResponse, FilterChain filterChain)
             throws IOException, ServletException {
         HttpServletRequest req = (HttpServletRequest) servletRequest;
         HttpServletResponse resp = (HttpServletResponse) servletResponse;
@@ -34,10 +35,5 @@ public class AuthenticationFilter implements Filter {
             return;
         }
         filterChain.doFilter(req, resp);
-    }
-
-    @Override
-    public void destroy() {
-        Filter.super.destroy();
     }
 }
